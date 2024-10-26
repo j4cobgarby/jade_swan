@@ -1,0 +1,15 @@
+body {
+    background-color: black;
+    background-image: url("/bg.png");
+    background-size: 400px;
+}
+
+img {
+    max-width: 1000px;
+    border: 1px solid green;
+}
+
+div.content {
+    margin: auto;
+    text-align: center;
+}
