@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import pygame
 import sys
 import json
@@ -22,7 +24,7 @@ def json_to_html(basename):
         dic = json.load(jf)
 
     with open("scenes/" + basename + ".html", "w") as f:
-        html = f'<img src="/{dic["img"]}" usemap="#imgmap"><map name="imgmap">'
+        html = f'<img class="game" src="/{dic["img"]}" usemap="#imgmap"><map name="imgmap">'
         for s in dic["shapes"]:
             coords = ','.join(f"{c[0]},{c[1]}" for c in s["poly"])
             html += f'<area shape="poly" coords="{coords}" href="#" onclick="alert(\'{s["name"]}\')">'

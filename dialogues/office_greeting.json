@@ -1,0 +1,15 @@
+{
+    "dialogues": [
+        {
+            "conditions": [],
+            "script": [
+                {"speaker": "Haskell Wizard", "text": "Thank god you're here! etc. etc."},
+                {"speaker": "You", "text": "What's wrong?"},
+                {"speaker": "Haskell Wizard", "text": "Lost my swan :("},
+                {"speaker": "You", "text": "I can help, etc."}
+            ]
+        }
+    ]
+}
+
+{}

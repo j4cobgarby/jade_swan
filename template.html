@@ -3,38 +3,19 @@
     <meta charset="UTF-8">
     <title>~~~~</title>
     <link rel="stylesheet" href="/style.css">
+    <script src="/js/map_resizer.js"></script>
 </head>
 <body>
-    <script>
-        function mapResizer(maps) {
-            if (!maps) {maps = document.getElementsByTagName('map');}
-            for (const map of maps) {
-                map.img = document.querySelectorAll(`[usemap="#${map.name}"]`)[0];
-                map.areas = map.getElementsByTagName('area');
-                for (const area of map.areas) {
-                    area.coordArr = area.coords.split(',');
-                }
-            }
-            function resizeMaps() {
-                for (const map of maps) {
-                    const scale = map.img.offsetWidth / (map.img.naturalWidth || map.img.width);
-                    for (const area of map.areas) {
-                        area.coords = area.coordArr.map(coord => Math.round(coord * scale)).join(',');
-                    }
-                }
-            }
-            window.addEventListener('resize', () => resizeMaps());
-            resizeMaps();
-        }
-
-        if (document.readyState == 'complete') {
-            mapResizer();
-        } else {
-            window.addEventListener('load', () => mapResizer());
-        }
-    </script>
     <div class="content">
         REPLACEME
+
+        <div class="dialogue">
+            <img src="/svg/icon_wizard.svg" alt="Lambda symbol" class="icon">
+            <div class="text">
+                <h2 class="speaker">Haskell Wizard</h2>
+                <p class="speech">"Help me! Someone stole my precious <i>Jade Swan!</i>"</p>    
+            </div>
+        </div>
     </div>
 </body>
 </html>

@@ -1,15 +1,55 @@
+@font-face {
+    font-family: "Garamond";
+    src: url("/font/EBGaramond08-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Garamond";
+    src: url("/font/EBGaramond08-Italic.ttf") format("truetype");
+    font-style: italic;
+}
+
 body {
     background-color: black;
     background-image: url("/bg.png");
     background-size: 400px;
+
+    font-family: 'Garamond', serif;
 }
 
-img {
+img.game {
     max-width: 1000px;
     border: 1px solid green;
+    margin-top: 30px;
 }
 
 div.content {
     margin: auto;
     text-align: center;
+}
+
+div.dialogue {
+    background-color: black;
+    color: white;
+    border: 1px solid yellow;
+
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 50px;
+    vertical-align: middle;
+}
+
+div.dialogue i {
+    color: yellow;
+}
+
+div.text {
+    display: inline-block;
+}
+
+img.icon {
+    float: left;
 }
