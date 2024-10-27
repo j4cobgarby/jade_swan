@@ -180,7 +180,7 @@ var dialogues = {
         "conditions": ["black_market_rejected"],
         "speaker": "java",
         "text": "He wouldn't talk to you? I could give you the secret code. But I need you to do something for me first.",
-        "img": "/scene_images/sus_deal.jpg",
+        "img": "scene_images/deal.jpg",
         "go_to_scene": "",
         "responses": [
             {
@@ -194,6 +194,7 @@ var dialogues = {
         "conditions": [],
         "speaker": "java",
         "text": "Get me running boots. I don't run so fast, and I'd like to change that.",
+        "img": "scene_images/need_shoes.jpg",
         "responses": [
             {
                 "conditions": [],
@@ -206,7 +207,8 @@ var dialogues = {
         "conditions": [],
         "speaker": "thought",
         "text": "Quite a strange request... But I'm pretty sure I know a good shoe shop.",
-        "go_to_scene": "car",
+        "go_to_scene": "cafe",
+        "img": "scene_images/java_thumbsup.jpg",
         "responses": []
     },
 
@@ -269,6 +271,135 @@ var dialogues = {
         "speaker": "java",
         "text": "Hi Detective. Sorry, give the coffee time to kick in. I’m tired from having to tell people that Javascript isn’t related to me.",
         "go_to_scene": "cafe",
+        "pickup": ["met_java"],
+        "responses": []
+    },
+
+    "inspect_inn_sign": {
+        "conditions": [],
+        "speaker": "thought",
+        "text": "Huh... Why do they even call it an inn, when you ov... Nevermind.",
+        "go_to_scene": "",
+        "responses": []
+    },
+    "pub_window": {
+        "conditions": [],
+        "speaker": "ear",
+        "text": "*thump thump thump*",
+        "go_to_scene": "",
+        "responses": []
+    },
+
+    "python_with_password_no_news": {
+        "conditions": ["password", "javascript_known"],
+        "speaker": "python",
+        "text": "You got what you wanted. Go suck a lemon.",
+        "go_to_scene": "pub",
+        "responses": []
+    },
+    "python_with_password": {
+        "conditions": ["password"],
+        "speaker": "python",
+        "text": "Huh, guess I misjudged you, kid.",
+        "go_to_scene": "",
+        "responses": [
+            {"conditions": [], "text": "Sure did, pal.", "go_to_dialogue": "python_password2"}
+        ]
+    },
+    "python_password2": {
+        "conditions": [],
+        "speaker": "python",
+        "text": "Yeah I got the coffee. Real stuff, too. I'm no snake oil salesman, I'm known for my fine imports. Here ya go.",
+        "go_to_scene": "",
+        "responses": [
+            {"conditions": [], "text": "Smells good. Got any info about it?", "go_to_dialogue": "python_password3"}
+        ]
+    },
+    "python_password3": {
+        "conditions": [],
+        "speaker": "python",
+        "text": "I'm ain't telling you who gave it me! I eat rats for breakfast.",
+        "go_to_scene": "",
+        "responses": [
+            {"conditions": [], "text": "It says 'Illegally sourced by the Great Javascript'.", "go_to_dialogue": "python_password4"}
+        ]
+    },
+    "python_password4": {
+        "conditions": [],
+        "speaker": "python",
+        "text": "...",
+        "go_to_scene": "",
+        "responses": [
+            {"conditions": [], "text": "...", "go_to_dialogue": "python_password5"}
+        ]
+    },
+    "python_password5": {
+        "conditions": [],
+        "speaker": "python",
+        "text": "...",
+        "go_to_scene": "",
+        "responses": [
+            {"conditions": [], "text": "...", "go_to_dialogue": "python_password6"}
+        ]
+    },
+    "python_password6": {
+        "conditions": [],
+        "speaker": "python",
+        "text": "... I told him not to write that.",
+        "go_to_scene": "",
+        "pickup": ["+javascript_known"],
+        "responses": [
+            {"conditions": [], "text": "Well, well, well....", "go_to_dialogue": "back_to_pub"}
+        ]
+    },
+    "back_to_pub": {
+        "conditions": [],
+        "speaker": "thought",
+        "text": "So it was Javascript all along! I always knew there was something up with that guy...",
+        "go_to_scene": "pub",
+        "responses": []
+    },
+    "python_after_java": {
+        "conditions": ["met_java"],
+        "speaker": "python",
+        "text": "You spoke to Java? I'm not buying it, kid. I mean, I usually do the other side of transactions.",
+        "go_to_scene": "",
+        "responses": [{
+            "conditions": [], "text": "Come on, Python! Java trusts me, I promise!", "go_to_dialogue": "python_after_java2"
+        }]
+    },
+    "python_after_java2": {
+        "conditions": [],
+        "speaker": "python",
+        "text": "If Java really thought you were on the level, he’d give you the pass code.",
+        "go_to_scene": "",
+        "responses": [{
+            "conditions": [], "text": "He probably just forgot, you know how he is.", "go_to_dialogue": "back_to_java"
+        }]
+    },
+    "back_to_java": {
+        "conditions": [],
+        "speaker": "thought",
+        "text": "Guess I've got a few more questions for ol' Java... Maybe I need to help him out with his boots.",
+        "go_to_scene": "pub",
+        "responses": []
+    },
+    "python_basis": {
+        "speaker": "python",
+        "text": "Beat it. I can tell you're not blackhearted enough for the Black Market.",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Uh.. I...",
+                "go_to_dialogue": "python_basis2"
+            }
+        ]
+    },
+    "python_basis2": {
+        "speaker": "python",
+        "text": "You probably want the Gold Market; you'll find them here tomorrow.",
+        "go_to_scene": "pub",
         "responses": []
     }
 }
