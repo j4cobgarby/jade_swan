@@ -846,7 +846,7 @@ var dialogues = {
     "fight": {
         "speaker": "javascript",
         "text": "*oof*, *boof*, *bang*, *crash*. *A key clatters to the ground*",
-        "img": "scene_images/bash.jpg",
+        "img": "scene_images/clownfight.gif",
         "go_to_scene": "",
         "pickup": ["+key"],
         "responses": [
