@@ -165,6 +165,11 @@ div.dialogue h2.speaker {
     font-size: 20pt;
 }
 
+div.dialogue h2.speaker::after {
+    font-style: normal;
+    content: ":";
+}
+
 div.dialogue p.speech {
     font-size: 16pt;
 }
