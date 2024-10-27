@@ -40,6 +40,11 @@ function start_dialogue(first_dialogue) {
 function render_dialogue(dialogueName) {
     console.log("rendering dialogue", dialogueName)
 
+    // First find dialogue in (potential) list which matches conditions
+
+
+    // Then render it
+
     var dialogue = dialogues[dialogueName]
     if (!dialogue) {
         console.log("not found")
