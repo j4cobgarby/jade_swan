@@ -267,4 +267,202 @@ var dialogues = {
     "java_first_time": {
         "conditions": []
     }
+    "uni_main": {
+        "conditions": [""],
+        "speaker": "thought",
+        "text": "The pinnacle of human reason.",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Cafe",
+                "go_to_dialogue": "cafe"
+            },
+            {
+                "conditions": [],
+                "text": "Art Department",
+                "go_to_dialogue": "art_dept"
+            },
+            {
+                "conditions": [],
+                "text": "Geology Department",
+                "go_to_dialogue": "geo_office"
+            },
+            {
+                "conditions": [],
+                "text": "Staircase",
+                "go_to_dialogue": "staircase"
+            },
+        ]
+    },
+
+    "geo_office": {
+        "conditions": [""],
+        "speaker": "thought",
+        "text": "This geology stuff's beyond me.",
+        "go_to_scene": "",
+        "responses": "responses": [
+            {
+                "conditions": [],
+                "text": "University Main",
+                "go_to_dialogue": "uni_main"
+            }
+        ]
+    },
+
+    "art": {
+        "conditions": [""],
+        "speaker": "thought",
+        "text": "The smell... it's okay I guess.",
+        "go_to_scene": "",
+        "responses": "responses": [
+            {
+                "conditions": [],
+                "text": "University Main",
+                "go_to_dialogue": "uni_main"
+            }
+        ]
+    },
+
+    "cafe": {
+        "conditions": [""],
+        "speaker": "thought",
+        "text": "The smell... it's okay I guess.",
+        "go_to_scene": "",
+        "responses": "responses": [
+            {
+                "conditions": [],
+                "text": "University Main",
+                "go_to_dialogue": "uni_main"
+            }
+        ]
+    },
+
+
+
+
+    "geo_init": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "text": "Can I help you?",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Who are you?",
+                "go_to_dialogue": "geo_intro_0"
+            },
+            
+            {
+                "conditions": ["found_footprint"],
+                "text": "I have something you might be interested in...",
+                "go_to_dialogue": "geo_footprint_0"
+            },
+            
+            {
+                "conditions": [],
+                "text": "I'm watching you...",
+                "go_to_dialogue": "geo_farewell"
+            }
+        ]
+    },
+
+    "geo_intro_0": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "text": "Ah, hello! I’m a Professor of Mud and Dirt studies. I specialise in debugging.",
+        "go_to_scene": "geo_intro_0",
+        "responses": [
+        ]
+    },
+
+    "geo_intro_1": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "text": "That’s removing the bugs from the soil so we can analyse them.",
+        "go_to_scene": "geo_intro_1",
+        "responses": [
+        ]
+    },
+
+    "geo_intro_2": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "text": "I sure do love soil. The only thing I love more are semi-precious stones and animals carved from them.",
+        "go_to_scene": "geo_intro_2",
+        "responses": [
+        ]
+    },
+
+    "geo_intro_3": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "text": "I have every animal except a swan.",
+        "go_to_scene": "geo_intro_3",
+        "responses": [
+        ]
+    },
+
+    "geo_intro_4": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "text": "Hm? Me? Steal the jade swan? Really Detective, I’d never do that. Swans are frankly the dodo of the bird world.",
+        "go_to_scene": "geo_intro_4",
+        "responses": [
+        ]
+    },
+
+    "geo_intro_5": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "text": "I’d even prefer a rubber duck!",
+        "go_to_scene": "geo_office",
+        "responses": [
+        ]
+    },
+
+    "geo_footprint_0": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "text": "Ooh! That smell… you have a particularly interesting sample of dirt for me, don’t you!",
+        "go_to_scene": "geo_footprint_1",
+        "responses": [
+        ],
+        
+    },
+    "geo_footprint_1": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "text": "My word, the dirt in that footprint is clearly from the caves of India! Make for India post-haste!",
+        "go_to_scene": "geo_footprint_2",
+        "responses": [
+        ],
+        
+    },"geo_footprint_2": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "text": "Hm? Well, I suppose it could also be from the eighteenth tunnel from the west of the local castle also, that would also exactly fit the profile of this particular dirt.",
+        "go_to_scene": "geo_footprint_3",
+        "responses": [
+        ],
+        
+    },"geo_footprint_3": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "text": "Here, I’ll mark it on your map. And when you find a world map I’ll mark India on it, too.",
+        "go_to_scene": "geo_office",
+        "responses": [
+        ],
+        
+    },
+    
+    "geo_farewell": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "text": "Sorry, you won’t find any dirt on me. It’ll have all been catalogued and filed away.",
+        "go_to_scene": "geo_office",
+        "responses": [
+        ],
+    }
+
 }
