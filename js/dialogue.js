@@ -4,7 +4,7 @@ var conditionIconMap = {
     "beanbag": "/items/beanbag.png",
     "shoeprint": "/items/shoeprint.png",
     "shoes": "/items/shoes.png",
-    "maid": "/items/maid.png"
+    "maid": "/items/herring.png"
 }
 
 var characterMap = {
@@ -14,7 +14,23 @@ var characterMap = {
     },
     "thought": {
         "name": "You think",
+        "icon": "/icons/thought.png"
+    },
+    "java": {
+        "name": "Java",
         "icon": "/icons/hat.png"
+    },
+    "ear": {
+        "name": "You hear...",
+        "icon": "/icons/hat.png"
+    },
+    "python": {
+        "name": "The Python",
+        "icon": "/icons/hat.png"
+    },
+    "javascript": {
+        "name": "JavaScript",
+        "icon": "/icons/js.png"
     }
 }
 
@@ -54,17 +70,16 @@ function render_dialogue(dialogueName) {
     // First find dialogue in (potential) list which matches conditions
 
     var chosen_dialogue = undefined;
-    const dialogue_possibilities = dialogueName.split(",");
+    var dialogue_possibilities = dialogueName.split(",");
+
     for (let i = 0; i < dialogue_possibilities.length; i++) {
         const d_name = dialogue_possibilities[i];
         const d = dialogues[d_name];
         if (!d) {
             console.log("not found dialogue")
         }
-        console.log(d);
-
         if ("conditions" in d) {
-            if (d["conditions"] === "" || matches_conditions(d["conditions"].split())) {
+            if (d.conditions === "" || matches_conditions(d.conditions)) {
                 chosen_dialogue = d_name;
                 break;
             }
