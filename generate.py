@@ -25,6 +25,8 @@ def json_to_html(basename):
         dic = json.load(jf)
 
     with open("scenes/" + basename + ".html", "w") as f:
+        js = "var autoDialogue = '" + dic["auto_dialogue"] + "';"
+
         html = "<div class='image-wrapper'>"
         html += f'<img class="game" src="/{dic["img"]}" usemap="#imgmap"><map name="imgmap">'
         for s in dic["shapes"]:
@@ -36,12 +38,14 @@ def json_to_html(basename):
         for s in dic["shapes"]:
             coords = " ".join(f"L{c[0]},{c[1]}" for c in s["poly"]) + " Z"
             coords = "M" + coords[1:]
-            html += f"<path d='{coords}' stroke='#ffff00bb' fill='#ffff0022' stroke-width='6' fill='transparent'></path>"
+            html += f"<path d='{coords}' stroke='#ffff0066' fill='#ffff0022' stroke-width='3' fill='transparent'></path>"
         html += "</svg>"
         html += "</div>"
         # html += f"<script>start_dialogue('{dic['auto_dialogue']}');</script>"
 
-        f.write(template_text.replace("REPLACEME", html))
+        f.write(template_text
+                .replace("REPLACEME", html)
+                .replace("REPLACEJS", js))
 
 def gen_maps(img_name):
     img = pygame.image.load(img_name)

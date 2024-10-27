@@ -17,7 +17,10 @@ function load() {
     console.log(conditions)
 
     render_inventory()
-    start_dialogue("greeting")
+
+    if (autoDialogue != "") {
+        start_dialogue(autoDialogue)
+    }
 }
 
 dialogues = {
@@ -64,6 +67,8 @@ function render_dialogue(dialogueName) {
         console.log("not found")
         return
     }
+
+    document.querySelector("#dialogue-box").classList.remove("hidden")
 
     document.querySelector("#dialogue-speech").textContent = '"' + dialogue.text + '"'
 

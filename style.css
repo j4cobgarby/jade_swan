@@ -145,6 +145,14 @@ div.dialogue {
     vertical-align: middle;
 }
 
+div.dialogue.hidden * {
+    display: none;
+}
+
+div.dialogue.hidden {
+    border-color: rgb(106, 106, 0);
+}
+
 div.dialogue i {
     color: yellow;
 }
