@@ -3,7 +3,8 @@ var conditionIconMap = {
     "jade_swan": "/items/swan.png",
     "beanbag": "/items/beanbag.png",
     "shoeprint": "/items/shoeprint.png",
-    "shoes": "/items/shoes.png"
+    "shoes": "/items/shoes.png",
+    "maid": "/items/maid.png"
 }
 
 var characterMap = {
@@ -42,19 +43,22 @@ dialogues = {
                 "text": "Here it is.",
                 "go_to_dialogue": "thanks_for_swan"
             }
-        ]
+        ],
+        "pickup": ["+jade_swan"]
     },
     "thanks_for_offering": {
         "speaker": "wizard",
         "text": "Thanks very much for offering to help.",
         "go_to_scene": "stairway",
-        "responses": []
+        "responses": [],
+        "pickup": ["-jade_swan", "+shoes"]
     },
     "thanks_for_swan": {
         "speaker": "wizard",
         "text": "What? How do you have it already?",
         "go_to_scene": "end",
-        "responses": []
+        "responses": [],
+        "pickup": ["-maid"]
     }
 }
 
@@ -83,6 +87,35 @@ function render_dialogue(dialogueName) {
     document.getElementById("dialogue-speaker").textContent = speaker.name
     document.getElementById("speaker-icon").src = speaker.icon
 
+    if (dialogue.pickup) {
+        for (var p of dialogue.pickup) {
+            var op = p[0]
+            var item = p.substring(1)
+
+            if (op == "+") {
+                var idx = conditions.indexOf(item)
+                if (idx < 0) {
+                    conditions.push(item)
+                }
+            } else if (op == "-") {
+                var idx = conditions.indexOf(item)
+                if (idx > -1) {
+                    conditions.splice(idx, 1)
+                }
+            } else {
+                console.error("wrong op:", op, "in pickup", p)
+            }
+        }
+
+
+        console.log("now conditions are", conditions)
+
+        sessionStorage.setItem("conditions",
+            conditions.reduce((a, b) => a + ',' + b, "").substring(1))
+
+        render_inventory()
+    }
+
     if (dialogue.go_to_scene) {
         var button = document.createElement("button")
         button.textContent = "Continue . . ."
@@ -103,7 +136,7 @@ function render_dialogue(dialogueName) {
                 }
 
                 var icon = document.querySelector("img[item=" + condition + "]")
-                icon.classList.add("can-use")
+                if (icon) icon.classList.add("can-use")
             }
 
             if (!validResponse) continue
@@ -157,6 +190,7 @@ function dialogueAction(resp) {
 
 function render_inventory() {
     var itemsEl = document.getElementById("items")
+    itemsEl.innerHTML = ""
 
     for (const cond of conditions) {
         if (conditionIconMap.hasOwnProperty(cond)) {
