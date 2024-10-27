@@ -57,7 +57,14 @@ function start_dialogue(first_dialogue) {
 }
 
 function render_dialogue(dialogueName) {
+    console.log("rendering dialogue", dialogueName)
+
     var dialogue = dialogues[dialogueName]
+    if (!dialogue) {
+        console.log("not found")
+        return
+    }
+
     document.querySelector("#dialogue-speech").textContent = '"' + dialogue.text + '"'
 
     var buttons = document.querySelector("#dialogue-buttons")
