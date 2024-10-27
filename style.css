@@ -44,6 +44,7 @@ img.game {
 
 div.content {
     margin: auto;
+    margin-top: 100px;
     text-align: center;
 }
 
@@ -308,3 +309,44 @@ div.title a {
     background-color: #3b3834;
     text-decoration: none;
 }
+
+/* Position quicktime buttons */
+.quicktime-btn {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    padding: 0;
+    background-color: black;
+    color: white;
+    border: 2px solid red;
+    font-size: 14pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#btn-top-left { top: 10px; left: 10px; }
+#btn-top-right { top: 10px; right: 10px; }
+#btn-bottom-left { bottom: 10px; left: 10px; }
+#btn-bottom-right { bottom: 10px; right: 10px; }
+
+/* Position counters */
+.counter {
+    position: absolute;
+    padding: 5px;
+    color: yellow;
+    font-size: 36pt;
+    font-weight: bold;
+}
+
+#good-counter {
+    bottom: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+#bad-counter {
+    bottom: -140px;
+    left: 50%;
+    transform: translateX(-50%);
+  }

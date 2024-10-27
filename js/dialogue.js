@@ -27,6 +27,10 @@ var characterMap = {
     "python": {
         "name": "The Python",
         "icon": "/icons/hat.png"
+    },
+    "javascript": {
+        "name": "JavaScript",
+        "icon": "/icons/js.png"
     }
 }
 

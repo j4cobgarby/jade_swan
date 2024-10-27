@@ -66,7 +66,7 @@ var dialogues = {
     "thanks_for_listening": {
         "speaker": "wizard",
         "img": "scene_images/thanks.jpg",
-        "text": "Thanks for listening Detective, bye now. I’m sure you have matters to attend to. I fear that the Splendiferous Pristine Jade Swan is lost to us forever.",
+        "text": "Thanks for listening Detective, bye now. I'm sure you have matters to attend to. I fear that the Splendiferous Pristine Jade Swan is lost to us forever.",
         "go_to_scene": "",
         "responses": [
             {
@@ -79,7 +79,7 @@ var dialogues = {
     "search_for_it": {
         "speaker": "wizard",
         "img": "scene_images/clues.jpg",
-        "text": "Wait, search for it? I don't know how we’ll ever find it. I doubt the culprit left any clues in this room or anything like that.",
+        "text": "Wait, search for it? I don't know how we'll ever find it. I doubt the culprit left any clues in this room or anything like that.",
         "go_to_scene": "room",
         "responses": []
     },
@@ -144,7 +144,7 @@ var dialogues = {
     },
     "coffee_3": {
         "speaker": "wizard",
-        "text": "I’m no expert, but by their smell and subtle colouring, it seems that they came from the Cafe on 289 Main Street.",
+        "text": "I'm no expert, but by their smell and subtle colouring, it seems that they came from the Cafe on 289 Main Street.",
         "go_to_scene": "",
         "responses": [
             {
@@ -156,7 +156,7 @@ var dialogues = {
     },
     "coffee_4": {
         "speaker": "wizard",
-        "text": "Or something like that. That can’t be a clue though right?",
+        "text": "Or something like that. That can't be a clue though right?",
         "go_to_scene": "room",
         "pickup": ["+beans"]
     },
@@ -165,7 +165,7 @@ var dialogues = {
 
     "jade_swan_comment": {
         "speaker": "wizard",
-        "text": "That Jade Swan could tip the balance of the world into utter chaos if it’s not promptly returned to my desk. Put it out of your mind, Detective.",
+        "text": "That Jade Swan could tip the balance of the world into utter chaos if it's not promptly returned to my desk. Put it out of your mind, Detective.",
         "go_to_scene": "",
         "responses": [
             {
@@ -228,7 +228,7 @@ var dialogues = {
     "java_has_beans_2": {
         "conditions": ["beans"],
         "speaker": "java",
-        "text": "The coffee I’m drinking? Well… look, I’ll come clean. Ever since the shipment got hijacked, I’ve only been able to find it at the black market. I couldn’t afford a whole bag of the stuff, honest!",
+        "text": "The coffee I'm drinking? Well… look, I'll come clean. Ever since the shipment got hijacked, I've only been able to find it at the black market. I couldn't afford a whole bag of the stuff, honest!",
         "go_to_scene": "",
         "responses": [
             {
@@ -241,7 +241,7 @@ var dialogues = {
     "java_has_beans_3": {
         "conditions": ["beans"],
         "speaker": "java",
-        "text": "Look, the guy running the place. He’s a real snake, that Python. But he’ll vouch for me, and he might be able to tell you where he got the stuff from too. I’ll bet that thief of yours took that jaded bird of yours, too...",
+        "text": "Look, the guy running the place. He's a real snake, that Python. But he'll vouch for me, and he might be able to tell you where he got the stuff from too. I'll bet that thief of yours took that jaded bird of yours, too...",
         "go_to_scene": "",
         "responses": [
             {
@@ -269,7 +269,7 @@ var dialogues = {
     "java_first_time": {
         "conditions": [],
         "speaker": "java",
-        "text": "Hi Detective. Sorry, give the coffee time to kick in. I’m tired from having to tell people that Javascript isn’t related to me.",
+        "text": "Hi Detective. Sorry, give the coffee time to kick in. I'm tired from having to tell people that Javascript isn't related to me.",
         "go_to_scene": "cafe",
         "pickup": ["met_java"],
         "responses": []
@@ -371,7 +371,7 @@ var dialogues = {
     "python_after_java2": {
         "conditions": [],
         "speaker": "python",
-        "text": "If Java really thought you were on the level, he’d give you the pass code.",
+        "text": "If Java really thought you were on the level, he'd give you the pass code.",
         "go_to_scene": "",
         "responses": [{
             "conditions": [], "text": "He probably just forgot, you know how he is.", "go_to_dialogue": "back_to_java"
@@ -401,5 +401,329 @@ var dialogues = {
         "text": "You probably want the Gold Market; you'll find them here tomorrow.",
         "go_to_scene": "pub",
         "responses": []
-    }
+    },
+    "java_first_time": {
+        "conditions": []
+    },
+    "uni_main": {
+        "conditions": [""],
+        "speaker": "thought",
+        "text": "The pinnacle of human reason.",
+        "go_to_scene": "",
+        "responses": [
+        {
+            "conditions": [],
+            "text": "Cafe",
+            "go_to_dialogue": "cafe"
+        },
+        {
+            "conditions": [],
+            "text": "Art Department",
+            "go_to_dialogue": "art_dept"
+        },
+        {
+            "conditions": [],
+            "text": "Geology Department",
+            "go_to_dialogue": "geo_office"
+        },
+        {
+            "conditions": [],
+            "text": "Staircase",
+            "go_to_dialogue": "staircase"
+        },
+        ]
+    },
+
+    "car": {
+        "speaker": "thought",
+        "text": "I hope I remembered to put in the right fuel this time. . .",
+        "go_to_scene": "",
+        "responses": []
+    },
+    "registration": {
+        "speaker": "thought",
+        "text": "I tried to get a ‘Detective' number plate but this is the closest they had.",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "No time to waste.",
+                "go_to_dialogue": "car"
+            }
+        ]
+    },
+
+    "art": {
+        "conditions": [""],
+        "speaker": "thought",
+        "text": "The smell... it's okay I guess.",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "University Main",
+                "go_to_dialogue": "uni_main"
+            }
+        ]
+    },
+
+    "cafe": {
+        "conditions": [""],
+        "speaker": "thought",
+        "text": "The smell... it's okay I guess.",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "University Main",
+                "go_to_dialogue": "uni_main"
+            }
+        ]
+    },
+
+
+
+
+    "geo_init": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\geo_ask.jpg",
+        "text": "Can I help you?",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Who are you?",
+                "go_to_dialogue": "geo_intro_0"
+            },
+            
+            {
+                "conditions": ["found_footprint"],
+                "text": "I have something you might be interested in...",
+                "go_to_dialogue": "geo_footprint_0"
+            },
+            
+            {
+                "conditions": [],
+                "text": "I'm watching you...",
+                "go_to_dialogue": "geo_farewell"
+            }
+        ]
+    },
+
+    "geo_intro_0": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\hello1.jpg",
+        "text": "Ah, hello! I'm a Professor of Mud and Dirt studies. I specialise in debugging.",
+        "go_to_scene": "geo_intro_0",
+        "responses": [
+        ]
+    },
+
+    "geo_intro_1": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\hello2.jpg",
+        "text": "That's removing the bugs from the soil so we can analyse them.",
+        "go_to_scene": "geo_intro_1",
+        "responses": [
+        ]
+    },
+
+    "geo_intro_2": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\hello3.jpg",
+        "text": "I sure do love soil. The only thing I love more are semi-precious stones and animals carved from them.",
+        "go_to_scene": "geo_intro_2",
+        "responses": [
+        ]
+    },
+
+    "geo_intro_3": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\hello4.jpg",
+        "text": "I have every animal except a swan.",
+        "go_to_scene": "geo_intro_3",
+        "responses": [
+        ]
+    },
+
+    "geo_intro_4": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\hello5.jpg",
+        "text": "Hm? Me? Steal the jade swan? Really Detective, I'd never do that. Swans are frankly the dodo of the bird world.",
+        "go_to_scene": "geo_intro_4",
+        "responses": [
+        ]
+    },
+
+    "geo_intro_5": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\hello6.jpg",
+        "text": "I'd even prefer a rubber duck!",
+        "go_to_scene": "geo_office",
+        "responses": [
+        ]
+    },
+
+    "geo_footprint_0": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\footprint1.jpg",
+        "text": "Ooh! That smell… you have a particularly interesting sample of dirt for me, don't you!",
+        "go_to_scene": "geo_footprint_1",
+        "responses": [
+        ],
+        
+    },
+    "geo_footprint_1": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\footprint2.jpg",
+        "text": "My word, the dirt in that footprint is clearly from the caves of India! Make for India post-haste!",
+        "go_to_scene": "geo_footprint_2",
+        "responses": [
+        ],
+        
+    },"geo_footprint_2": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\footprint3.jpg",
+        "text": "Hm? Well, I suppose it could also be from the eighteenth tunnel from the west of the local castle also, that would also exactly fit the profile of this particular dirt.",
+        "go_to_scene": "geo_footprint_3",
+        "responses": [
+        ],
+        
+    },"geo_footprint_3": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\footprint4.jpg",
+        "text": "Here, I'll mark it on your map. And when you find a world map I'll mark India on it, too.",
+        "go_to_scene": "geo_office",
+        "responses": [
+        ],
+        
+    },
+    
+    "geo_farewell": {
+        "conditions": [""],
+        "speaker": "geologist",
+        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\farewell.jpg",
+        "text": "Sorry, you won't find any dirt on me. It'll have all been catalogued and filed away.",
+        "go_to_scene": "geo_office",
+        "responses": [
+        ],
+    },
+
+    "outside_office": {
+        "speaker": "thought",
+        "text": "Looks like that's the wizard's office up there. What's that trailing down from it? Some kind of lad -- uh...?",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Go back to the car",
+                "go_to_dialogue": "office_to_car"
+            }
+        ]
+    },
+    "found-ladder": {
+        "speaker": "thought",
+        "text": "Hmm, curious. That ladder looks awfully... *sketchy*. I wonder if any of the departments knows something about that.",
+        "go_to_scene": "outside_office",
+    },
+    "office_to_car": {
+        "speaker": "thought",
+        "text": "Okay, let's get in the car and get going!",
+        "go_to_scene": "car",
+        "responses": []
+    },
+
+    "js-intro": {
+        "speaker": "javascript",
+        "text": "Hoho! Heya! I hope you're having a wonderful day!",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": ["beans"],
+                "text": "I see you're drinking coffee.",
+                "go_to_dialogue": "js-defensive"
+            },
+            {
+                "conditions": ["javascript_known"],
+                "text": "I believe you have a KEY!",
+                "go_to_dialogue": "js-accusation"
+            }
+        ]
+    },
+    "js-defensive": {
+        "speaker": "javascript",
+        "img": "scene_images/js-up.jpg",
+        "text": "This?",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Yes. I found these beans. Have you... used them?",
+                "go_to_dialogue": "js-defensive2"
+            }
+        ]
+    },
+    "js-defensive2": {
+        "speaker": "javascript",
+        "img": "scene_images/javascript.jpg",
+        "text": "This isn't coffee. This is tea.",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Uh-huh.",
+                "go_to_dialogue": "js-defensive3"
+            }
+        ]
+    },
+    "js-defensive3": {
+        "speaker": "javascript",
+        "img": "scene_images/js-up.jpg",
+        "text": "Ever since court forced me to attend Chocoholics Anonymous I haven't been able to drink my morning Mocha. And coffee without chocolate is like a funeral with no jokes!",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "You're not as funny as you think you are.",
+                "go_to_dialogue": "js-defensive4"
+            }
+        ]
+    },
+    "js-accusation": {
+        "speaker": "javascript",
+        "text": "A k-key? Detective, I don't have any - don't touch me!",
+        "img": "scene_images/accusation.jpg",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "I believe you do, mister. . . . .",
+                "go_to_dialogue": "js-accusation2"
+            }
+        ]
+    },
+    "js-accusation2": {
+        "speaker": "javascript",
+        "text": "You don't want to see what happens when the clown stops being funny. . . . . . . .",
+        "img": "scene_images/angry.jpg",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Oh, but I might!",
+                "go_to_dialogue": "greeting"
+            }
+        ]
+    },
 }
