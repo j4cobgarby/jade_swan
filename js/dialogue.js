@@ -16,6 +16,8 @@ var characterMap = {
 
 var selectedItem = null
 
+var intervals = []
+
 function load() {
     conditions = sessionStorage.getItem("conditions").split(",");
     console.log(conditions)
@@ -24,41 +26,6 @@ function load() {
 
     if (autoDialogue != "") {
         start_dialogue(autoDialogue)
-    }
-}
-
-dialogues = {
-    "greeting": {
-        "speaker": "wizard",
-        "text": "Thank god you're here! I've lost my Jade Swan!",
-        "go_to_scene": "",
-        "responses": [
-            {
-                "conditions": [],
-                "text": "I can help.",
-                "go_to_dialogue": "thanks_for_offering"
-            },
-            {
-                "conditions": ["jade_swan"],
-                "text": "Here it is.",
-                "go_to_dialogue": "thanks_for_swan"
-            }
-        ],
-        "pickup": ["+jade_swan"]
-    },
-    "thanks_for_offering": {
-        "speaker": "wizard",
-        "text": "Thanks very much for offering to help.",
-        "go_to_scene": "stairway",
-        "responses": [],
-        "pickup": ["-jade_swan", "+shoes"]
-    },
-    "thanks_for_swan": {
-        "speaker": "wizard",
-        "text": "What? How do you have it already?",
-        "go_to_scene": "end",
-        "responses": [],
-        "pickup": ["-maid"]
     }
 }
 
@@ -77,9 +44,6 @@ function render_dialogue(dialogueName) {
 
     document.querySelector("#dialogue-box").classList.remove("hidden")
 
-    // document.querySelector("#dialogue-speech").textContent = '"' + dialogue.text + '"'
-    displaySpeech('"' + dialogue.text + '"')
-
     var buttons = document.querySelector("#dialogue-buttons")
     buttons.innerHTML = ""
 
@@ -87,99 +51,110 @@ function render_dialogue(dialogueName) {
     document.getElementById("dialogue-speaker").textContent = speaker.name
     document.getElementById("speaker-icon").src = speaker.icon
 
-    if (dialogue.pickup) {
-        for (var p of dialogue.pickup) {
-            var op = p[0]
-            var item = p.substring(1)
-
-            if (op == "+") {
-                var idx = conditions.indexOf(item)
-                if (idx < 0) {
-                    conditions.push(item)
-                }
-            } else if (op == "-") {
-                var idx = conditions.indexOf(item)
-                if (idx > -1) {
-                    conditions.splice(idx, 1)
-                }
-            } else {
-                console.error("wrong op:", op, "in pickup", p)
-            }
-        }
-
-
-        console.log("now conditions are", conditions)
-
-        sessionStorage.setItem("conditions",
-            conditions.reduce((a, b) => a + ',' + b, "").substring(1))
-
-        render_inventory()
+    if (dialogue.img) {
+        document.querySelector("img.game").src = "/" + dialogue.img
     }
 
-    if (dialogue.go_to_scene) {
-        var button = document.createElement("button")
-        button.textContent = "Continue . . ."
-        button.classList.add("new-scene")
-        button.onclick = () => {
-            window.location.href = "/scene/" + dialogue.go_to_scene + ".html"
-        }
-        buttons.appendChild(button)
-    } else {
-        document.querySelectorAll("img.item").forEach(i => i.classList.remove("can-use"))
-
-        for (var response of dialogue.responses) {
-            var validResponse = true
-
-            for (var condition of response.conditions) {
-                if (!conditions.includes(condition)) {
-                    validResponse = false
+    displaySpeech('"' + dialogue.text + '"', () => {
+        if (dialogue.pickup) {
+            for (var p of dialogue.pickup) {
+                var op = p[0]
+                var item = p.substring(1)
+    
+                if (op == "+") {
+                    var idx = conditions.indexOf(item)
+                    if (idx < 0) {
+                        conditions.push(item)
+                    }
+                } else if (op == "-") {
+                    var idx = conditions.indexOf(item)
+                    if (idx > -1) {
+                        conditions.splice(idx, 1)
+                    }
+                } else {
+                    console.error("wrong op:", op, "in pickup", p)
                 }
-
-                var icon = document.querySelector("img[item=" + condition + "]")
-                if (icon) icon.classList.add("can-use")
             }
-
-            if (!validResponse) continue
-            const thisResponse = response
-
+    
+    
+            console.log("now conditions are", conditions)
+    
+            sessionStorage.setItem("conditions",
+                conditions.reduce((a, b) => a + ',' + b, "").substring(1))
+    
+            render_inventory()
+        }
+    
+        if (dialogue.go_to_scene) {
             var button = document.createElement("button")
-            button.textContent = response.text
-            button.onclick = () => dialogueAction(thisResponse)
-            if (response.conditions.length > 0) {
-                button.classList.add("can-use")
+            button.textContent = "Continue . . ."
+            button.classList.add("new-scene")
+            button.onclick = () => {
+                window.location.href = "/scene/" + dialogue.go_to_scene + ".html"
             }
             buttons.appendChild(button)
+        } else {
+            document.querySelectorAll("img.item").forEach(i => i.classList.remove("can-use"))
+    
+            for (var response of dialogue.responses) {
+                var validResponse = true
+    
+                for (var condition of response.conditions) {
+                    if (!conditions.includes(condition)) {
+                        validResponse = false
+                    }
+    
+                    var icon = document.querySelector("img[item=" + condition + "]")
+                    if (icon) icon.classList.add("can-use")
+                }
+    
+                if (!validResponse) continue
+                const thisResponse = response
+    
+                var button = document.createElement("button")
+                button.textContent = response.text
+                button.onclick = () => dialogueAction(thisResponse)
+                if (response.conditions.length > 0) {
+                    button.classList.add("can-use")
+                }
+                buttons.appendChild(button)
+            }
         }
-    }
+    })
 }
 
-function displaySpeech(text) {
+function displaySpeech(text, andthen=null) {
+    intervals.forEach(window.clearInterval)
+
     var el = document.getElementById("dialogue-speech")
     el.textContent = ". . ."
 
-    window.setTimeout(
+    intervals.push(window.setTimeout(
         () => {
             var words = text.split("")
             el.textContent = ""
-            displayWords(words)
-        }, 1000
-    )
+            displayWords(words, andthen)
+        }, 500
+    ))
 }
 
-function displayWords(words) {
+function displayWords(words, andthen=null) {
     if (words.length == 0) {
+        if (andthen) {
+            intervals.push(window.setTimeout(andthen, 350))
+        }
         return
     }
 
     var el = document.getElementById("dialogue-speech")
     el.textContent += words[0]
 
-    window.setTimeout(
+    intervals.push(window.setTimeout(
         () => {
-            displayWords(words.slice(1))
+            displayWords(words.slice(1), andthen)
         },
-        10
-    )
+        [".", "!", ","].includes(words[0]) ? 300 : 10
+    ))
 }
 
 function dialogueAction(resp) {
