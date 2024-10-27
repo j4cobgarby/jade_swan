@@ -15,6 +15,10 @@ var characterMap = {
     "thought": {
         "name": "You think",
         "icon": "/icons/hat.png"
+    },
+    "javascript": {
+        "name": "JavaScript",
+        "icon": "/icons/js.png"
     }
 }
 

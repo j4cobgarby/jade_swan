@@ -310,4 +310,87 @@ var dialogues = {
         "go_to_scene": "car",
         "responses": []
     },
+
+    "js-intro": {
+        "speaker": "javascript",
+        "text": "Hoho! Heya! I hope you’re having a wonderful day!",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": ["beans"],
+                "text": "I see you're drinking coffee.",
+                "go_to_dialogue": "js-defensive"
+            },
+            {
+                "conditions": ["javascript_known"],
+                "text": "I believe you have a KEY!",
+                "go_to_dialogue": "js-accusation"
+            }
+        ]
+    },
+    "js-defensive": {
+        "speaker": "javascript",
+        "img": "scene_images/js-up.jpg",
+        "text": "This?",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Yes. I found these beans. Have you... used them?",
+                "go_to_dialogue": "js-defensive2"
+            }
+        ]
+    },
+    "js-defensive2": {
+        "speaker": "javascript",
+        "img": "scene_images/javascript.jpg",
+        "text": "This isn’t coffee. This is tea.",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Uh-huh.",
+                "go_to_dialogue": "js-defensive3"
+            }
+        ]
+    },
+    "js-defensive3": {
+        "speaker": "javascript",
+        "img": "scene_images/js-up.jpg",
+        "text": "Ever since court forced me to attend Chocoholics Anonymous I haven’t been able to drink my morning Mocha. And coffee without chocolate is like a funeral with no jokes!",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "You're not as funny as you think you are.",
+                "go_to_dialogue": "js-defensive4"
+            }
+        ]
+    },
+    "js-accusation": {
+        "speaker": "javascript",
+        "text": "A k-key? Detective, I don’t have any - don’t touch me!",
+        "img": "scene_images/accusation.jpg",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "I believe you do, mister. . . . .",
+                "go_to_dialogue": "js-accusation2"
+            }
+        ]
+    },
+    "js-accusation2": {
+        "speaker": "javascript",
+        "text": "You don’t want to see what happens when the clown stops being funny. . . . . . . .",
+        "img": "scene_images/angry.jpg",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Oh, but I might!",
+                "go_to_dialogue": "greeting"
+            }
+        ]
+    },
 }
