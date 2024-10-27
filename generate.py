@@ -32,7 +32,7 @@ def json_to_html(basename):
         for s in dic["shapes"]:
             coords = ','.join(f"{c[0]},{c[1]}" for c in s["poly"])
             if "dialogue" in s:
-                html += f'<area shape="poly" coords="{coords}" href="#" onclick="render_dialogue(\'{s["dialogue"]}\')">'
+                html += f'<area shape="poly" coords="{coords}" href="{s['href']}" onclick="render_dialogue(\'{s["dialogue"]}\')">'
         html += '</map>'
         html += "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1203 802'>"
         for s in dic["shapes"]:
