@@ -1,15 +1,28 @@
 {
-    "dialogues": [
-        {
-            "conditions": [],
-            "script": [
-                {"speaker": "Haskell Wizard", "text": "Thank god you're here! etc. etc."},
-                {"speaker": "You", "text": "What's wrong?"},
-                {"speaker": "Haskell Wizard", "text": "Lost my swan :("},
-                {"speaker": "You", "text": "I can help, etc."}
-            ]
-        }
-    ]
+    "greeting": {
+        "text": "Thank god you're here! I've lost my Jade Swan!",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "I can help.",
+                "go_to_dialogue": "thanks_for_offering"
+            },
+            {
+                "conditions": ["jade_swan"],
+                "text": "Here it is.",
+                "go_to_dialogue": "thanks_for_swan"
+            }
+        ]
+    },
+    "thanks_for_offering": {
+        "text": "Thanks very much for offering to help.",
+        "go_to_scene": "stairway",
+        "responses": []
+    },
+    "thanks_for_swan": {
+        "text": "What? How do you have it already?",
+        "go_to_scene": "end",
+        "responses": []
+    }
 }
-
-{}

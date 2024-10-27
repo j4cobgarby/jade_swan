@@ -37,12 +37,28 @@ div.dialogue {
     text-align: left;
     padding-left: 15px;
     padding-right: 15px;
+    padding-bottom: 20px;
     margin-top: 50px;
     vertical-align: middle;
 }
 
 div.dialogue i {
     color: yellow;
+}
+
+div.dialogue button {
+    background-color: black;
+    color: lightblue;
+    border: 1px solid green;
+    padding: 5px;
+    border-radius: 3px;
+
+}
+
+div.dialogue button:hover {
+    background-color: #303030;
+    border: 1px solid lime;
+    cursor: pointer;
 }
 
 div.text {
