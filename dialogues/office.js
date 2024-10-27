@@ -301,6 +301,7 @@ var dialogues = {
         "conditions": ["password"],
         "speaker": "python",
         "text": "Huh, guess I misjudged you, kid.",
+        "img": "scene_images/python_4.jpg",
         "go_to_scene": "",
         "responses": [
             {"conditions": [], "text": "Sure did, pal.", "go_to_dialogue": "python_password2"}
