@@ -439,8 +439,41 @@ var dialogues = {
         "speaker": "thought",
         "text": "I hope I remembered to put in the right fuel this time. . .",
         "go_to_scene": "",
-        "responses": []
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Back to the office",
+                "go_to_dialogue": "car_to_office",
+            },
+            {
+                "conditions": [],
+                "text": "Go to the café",
+                "go_to_dialogue": "car_to_cafe",
+            },
+            {
+                "conditions": [],
+                "text": "Go to the caves",
+                "go_to_dialogue": "car_to_caves",
+            }
+        ]
     },
+    "car_to_office": {
+        "speaker": "thought",
+        "text": "Back to work already? The wizard's work, that is.",
+        "go_to_scene": "room",
+    },
+    "car_to_cafe": {
+        "speaker": "thought",
+        "text": "I could do with a nice coffee anyway. All this detecting really weighs on you.",
+        "go_to_scene": "cafe",
+    },
+    "car_to_caves": {
+        "speaker": "thought",
+        "text": "Isn't that a bit spooky? I mean. . . I'm a brave, strong detective!",
+        "go_to_scene": "caged_swan",
+    },
+
+
     "registration": {
         "speaker": "thought",
         "text": "I tried to get a ‘Detective' number plate but this is the closest they had.",
