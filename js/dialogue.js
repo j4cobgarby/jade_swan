@@ -4,7 +4,8 @@ var conditionIconMap = {
     "beanbag": "/items/beanbag.png",
     "shoeprint": "/items/shoeprint.png",
     "shoes": "/items/shoes.png",
-    "maid": "/items/herring.png"
+    "maid": "/items/herring.png",
+    "key": "/items/key.png"
 }
 
 var characterMap = {

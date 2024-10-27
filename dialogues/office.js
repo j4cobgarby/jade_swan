@@ -588,4 +588,65 @@ var dialogues = {
             }
         ]
     },
+
+
+    "cage-intro": {
+        "speaker": "thought",
+        "text": "Here we are, at the caves. What's what shining in the darkness?",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": ["key"],
+                "text": "Open the lock.",
+                "go_to_dialogue": "cage-unlocked"
+            },
+            {
+                "conditions": [],
+                "text": "Back to the car",
+                "go_to_dialogue": "to_car"
+            }
+        ]
+    },
+    "click-swan": {
+        "speaker": "thought",
+        "text": "The swan! It's just. . . Ughhhhh. . . Just too far to reach through the grating.",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "That's a shame.",
+                "go_to_dialogue": "cage-intro"
+            }
+        ]
+    },
+    "cage-unlocked": {
+        "speaker": "thought",
+        "text": "At last, my long journey was at an end. The Jade swan was in my grasp. I stared wordlessly for some time at the swan. Was it all worth it? I felt a thought projected into my mind, as if it were answering me. . .",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "What did it say?",
+                "go_to_dialogue": "the-cage-said"
+            }
+        ]
+    },
+    "the-cage-said": {
+        "speaker": "thought",
+        "text": "It said . . .",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": ". . .",
+                "go_to_dialogue": "finale"
+            }
+        ]
+    },
+    "finale": {
+        "speaker": "wizard",
+        "text": "HONK",
+        "go_to_scene": "",
+        "responses": []
+    },
 }
