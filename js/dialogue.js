@@ -73,7 +73,8 @@ function render_dialogue(dialogueName) {
 
     document.querySelector("#dialogue-box").classList.remove("hidden")
 
-    document.querySelector("#dialogue-speech").textContent = '"' + dialogue.text + '"'
+    // document.querySelector("#dialogue-speech").textContent = '"' + dialogue.text + '"'
+    displaySpeech('"' + dialogue.text + '"')
 
     var buttons = document.querySelector("#dialogue-buttons")
     buttons.innerHTML = ""
@@ -117,6 +118,35 @@ function render_dialogue(dialogueName) {
             buttons.appendChild(button)
         }
     }
+}
+
+function displaySpeech(text) {
+    var el = document.getElementById("dialogue-speech")
+    el.textContent = ". . ."
+
+    window.setTimeout(
+        () => {
+            var words = text.split("")
+            el.textContent = ""
+            displayWords(words)
+        }, 1000
+    )
+}
+
+function displayWords(words) {
+    if (words.length == 0) {
+        return
+    }
+
+    var el = document.getElementById("dialogue-speech")
+    el.textContent += words[0]
+
+    window.setTimeout(
+        () => {
+            displayWords(words.slice(1))
+        },
+        10
+    )
 }
 
 function dialogueAction(resp) {
