@@ -24,11 +24,19 @@ def json_to_html(basename):
         dic = json.load(jf)
 
     with open("scenes/" + basename + ".html", "w") as f:
-        html = f'<img class="game" src="/{dic["img"]}" usemap="#imgmap"><map name="imgmap">'
+        html = "<div class='image-wrapper'>"
+        html += f'<img class="game" src="/{dic["img"]}" usemap="#imgmap"><map name="imgmap">'
         for s in dic["shapes"]:
             coords = ','.join(f"{c[0]},{c[1]}" for c in s["poly"])
             html += f'<area shape="poly" coords="{coords}" href="#" onclick="alert(\'{s["name"]}\')">'
         html += '</map>'
+        html += "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1203 802'>"
+        for s in dic["shapes"]:
+            coords = " ".join(f"L{c[0]},{c[1]}" for c in s["poly"]) + " Z"
+            coords = "M" + coords[1:]
+            html += f"<path d='{coords}' stroke='#ffff00bb' fill='#ffff0022' stroke-width='6' fill='transparent'></path>"
+        html += "</svg>"
+        html += "</div>"
 
         f.write(template_text.replace("REPLACEME", html))
 
