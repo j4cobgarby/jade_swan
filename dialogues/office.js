@@ -266,47 +266,51 @@ var dialogues = {
     },
     "java_first_time": {
         "conditions": []
-    }
+    },
     "uni_main": {
         "conditions": [""],
         "speaker": "thought",
         "text": "The pinnacle of human reason.",
         "go_to_scene": "",
         "responses": [
-            {
-                "conditions": [],
-                "text": "Cafe",
-                "go_to_dialogue": "cafe"
-            },
-            {
-                "conditions": [],
-                "text": "Art Department",
-                "go_to_dialogue": "art_dept"
-            },
-            {
-                "conditions": [],
-                "text": "Geology Department",
-                "go_to_dialogue": "geo_office"
-            },
-            {
-                "conditions": [],
-                "text": "Staircase",
-                "go_to_dialogue": "staircase"
-            },
+        {
+            "conditions": [],
+            "text": "Cafe",
+            "go_to_dialogue": "cafe"
+        },
+        {
+            "conditions": [],
+            "text": "Art Department",
+            "go_to_dialogue": "art_dept"
+        },
+        {
+            "conditions": [],
+            "text": "Geology Department",
+            "go_to_dialogue": "geo_office"
+        },
+        {
+            "conditions": [],
+            "text": "Staircase",
+            "go_to_dialogue": "staircase"
+        },
         ]
     },
 
-    "geo_office": {
-        "conditions": [""],
+    "car": {
         "speaker": "thought",
-        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\geo_busy.jpg",
-        "text": "This geology stuff's beyond me.",
+        "text": "I hope I remembered to put in the right fuel this time. . .",
         "go_to_scene": "",
-        "responses": "responses": [
+        "responses": []
+    },
+    "registration": {
+        "speaker": "thought",
+        "text": "I tried to get a ‘Detective’ number plate but this is the closest they had.",
+        "go_to_scene": "",
+        "responses": [
             {
                 "conditions": [],
-                "text": "University Main",
-                "go_to_dialogue": "uni_main"
+                "text": "No time to waste.",
+                "go_to_dialogue": "car"
             }
         ]
     },
@@ -316,7 +320,7 @@ var dialogues = {
         "speaker": "thought",
         "text": "The smell... it's okay I guess.",
         "go_to_scene": "",
-        "responses": "responses": [
+        "responses": [
             {
                 "conditions": [],
                 "text": "University Main",
@@ -330,7 +334,7 @@ var dialogues = {
         "speaker": "thought",
         "text": "The smell... it's okay I guess.",
         "go_to_scene": "",
-        "responses": "responses": [
+        "responses": [
             {
                 "conditions": [],
                 "text": "University Main",
@@ -476,6 +480,29 @@ var dialogues = {
         "go_to_scene": "geo_office",
         "responses": [
         ],
-    }
+    },
 
+    "outside_office": {
+        "speaker": "thought",
+        "text": "Looks like that's the wizard's office up there. What's that trailing down from it? Some kind of lad -- uh...?",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Go back to the car",
+                "go_to_dialogue": "office_to_car"
+            }
+        ]
+    },
+    "found-ladder": {
+        "speaker": "thought",
+        "text": "Hmm, curious. That ladder looks awfully... *sketchy*. I wonder if any of the departments knows something about that.",
+        "go_to_scene": "outside_office",
+    },
+    "office_to_car": {
+        "speaker": "thought",
+        "text": "Okay, let's get in the car and get going!",
+        "go_to_scene": "car",
+        "responses": []
+    },
 }
