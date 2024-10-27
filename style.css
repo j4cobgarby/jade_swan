@@ -167,7 +167,7 @@ div.dialogue h2.speaker {
 
 div.dialogue h2.speaker::after {
     font-style: normal;
-    content: " says:";
+    content: ":";
 }
 
 div.dialogue p.speech {

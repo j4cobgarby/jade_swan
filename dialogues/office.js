@@ -76,27 +76,45 @@ var dialogues = {
     "search_for_it": {
         "speaker": "wizard",
         "text": "Wait, search for it? I don't know how we’ll ever find it. I doubt the culprit left any clues in this room or anything like that.",
+        "go_to_scene": "room",
+        "responses": []
+    },
+
+
+
+
+    "room": {
+        "speaker": "thought",
+        "text": "The Wizard's office. Perhaps there are some clues around here somewhere.",
         "go_to_scene": "",
         "responses": [
             {
-                "conditions": [],
-                "text": "Leave it to me.",
-                "go_to_dialogue": "greeting"
+                "conditions": ["beans"],
+                "text": "I'm done here . . .",
+                "go_to_dialogue": "car"
             }
         ]
     },
+    "to_car": {
+        "speaker": "thought",
+        "text": "Okay, let's get in the car and get going!",
+        "go_to_scene": "car",
+        "responses": []
+    },
+
 
 
 
     "inspect_desk": {
         "speaker": "wizard",
+        "img": "scene_images/desk.jpg",
         "text": "The culprit left this desk in an awful state. Luckily, I cleaned it up for you, Detective.",
         "go_to_scene": "",
         "responses": [
             {
                 "conditions": [],
                 "text": "I see . . . Wise as a Wizard, as always.",
-                "go_to_dialogue": "greeting"
+                "go_to_dialogue": "room"
             }
         ]
     },
@@ -151,5 +169,17 @@ var dialogues = {
             }
         ],
         "pickup": ["+beans"]
+    },
+    "jade_swan_comment": {
+        "speaker": "wizard",
+        "text": "That Jade Swan could tip the balance of the world into utter chaos if it’s not promptly returned to my desk. Put it out of your mind, Detective.",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "I will try my best.",
+                "go_to_dialogue": "room"
+            }
+        ]
     },
 }

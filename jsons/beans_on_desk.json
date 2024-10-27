@@ -1,1 +1,0 @@
-{"img": "scene_images/beans_on_desk.jpg", "auto_dialogue": "go_away", "shapes": [{"poly": [[318, 479], [430, 351], [688, 410], [605, 581]], "name": "book", "href": "#", "dialogue": "inspect_desk"}, {"poly": [[737, 623], [738, 678], [758, 727], [787, 715], [816, 672], [825, 629], [780, 608]], "name": "beans", "href": "#", "dialogue": "find_coffee"}]}

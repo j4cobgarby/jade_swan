@@ -1,0 +1,1 @@
+{"img": "scene_images/room.jpg", "auto_dialogue": "room", "shapes": [{"poly": [[639, 399], [640, 526], [731, 796], [1103, 795], [1101, 658], [801, 403]], "name": "desk", "href": "#", "dialogue": "inspect_desk"}]}

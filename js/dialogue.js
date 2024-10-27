@@ -11,6 +11,10 @@ var characterMap = {
     "wizard": {
         "name": "Haskell Wizard",
         "icon": "/icons/hat.png"
+    },
+    "thought": {
+        "name": "You think",
+        "icon": "/icons/hat.png"
     }
 }
 
@@ -56,6 +60,8 @@ function render_dialogue(dialogueName) {
     }
 
     displaySpeech('"' + dialogue.text + '"', () => {
+        var addedItem = ""
+
         if (dialogue.pickup) {
             for (var p of dialogue.pickup) {
                 var op = p[0]
@@ -65,6 +71,7 @@ function render_dialogue(dialogueName) {
                     var idx = conditions.indexOf(item)
                     if (idx < 0) {
                         conditions.push(item)
+                        addedItem = "You got a new item!"
                     }
                 } else if (op == "-") {
                     var idx = conditions.indexOf(item)
@@ -76,7 +83,6 @@ function render_dialogue(dialogueName) {
                 }
             }
     
-    
             console.log("now conditions are", conditions)
     
             sessionStorage.setItem("conditions",
@@ -84,13 +90,20 @@ function render_dialogue(dialogueName) {
     
             render_inventory()
         }
+
+        if (addedItem.length > 0) {
+            var el = document.createElement("p")
+            el.textContent = addedItem
+            el.style.fontStyle = "italic"
+            document.querySelector("#dialogue-box div.text").appendChild(el)
+        }
     
         if (dialogue.go_to_scene) {
             var button = document.createElement("button")
             button.textContent = "Continue . . ."
             button.classList.add("new-scene")
             button.onclick = () => {
-                window.location.href = "/scene/" + dialogue.go_to_scene + ".html"
+                window.location.href = "/scenes/" + dialogue.go_to_scene + ".html"
             }
             buttons.appendChild(button)
         } else {
