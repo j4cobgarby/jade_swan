@@ -45,7 +45,7 @@ div.content {
 
 div.controls {
     display: grid;
-    grid-template-columns: auto 550px;
+    grid-template-columns: 600px auto;
     max-width: 1000px;
     margin: auto;
     gap: 20px;
@@ -80,6 +80,25 @@ img.item.selected {
     animation: selection-wave 0.5s infinite;
     animation-direction: alternate-reverse;
     animation-timing-function: linear;
+}
+
+.can-use {
+    animation: pulsate 2s infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes pulsate {
+    0% {
+        filter: drop-shadow(0px 0px 6px rgba(255, 113, 201, 0.84));
+    }
+
+    50% {
+        filter: drop-shadow(0px 0px 16px rgb(255, 145, 213));
+    }
+
+    100% {
+        filter: drop-shadow(0px 0px 6px rgb(255, 113, 201));
+    }
 }
 
 @keyframes selection-wave {
@@ -130,18 +149,27 @@ div.dialogue i {
     color: yellow;
 }
 
+div.dialogue div.btns {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
 div.dialogue button {
     background-color: black;
     color: lightblue;
     border: 2px solid green;
     padding: 5px;
-
 }
 
 div.dialogue button:hover {
     background-color: #303030;
     border: 2px solid lime;
     cursor: pointer;
+}
+
+div.dialogue button.new-scene {
+    border: 2px solid orange;
 }
 
 div.text {
