@@ -15,6 +15,23 @@ body {
     background-size: 400px;
 
     font-family: 'Garamond', serif;
+    color: yellow;
+}
+
+body.animated-background {
+    background-image: url("/bg.png");
+    background-size: 400px;
+    background-repeat: repeat;
+    animation: shiftBackground 45s linear infinite;
+}
+
+@keyframes shiftBackground {
+    from {
+        background-position: 0 0; /* Start position */
+    }
+    to {
+        background-position: 0px -400px; /* Shift position */
+    }
 }
 
 img.game {
@@ -71,4 +88,79 @@ svg {
     position: absolute;
     user-select: none;
     pointer-events: none;
+}
+
+div.title {
+    padding-top: 100px;
+    max-width: 500px;
+}
+
+div.title h1 {
+    font-size: 50pt;
+    text-shadow: 4px 2px 4px #ffff0033;
+    margin: 15px;
+}
+
+div.title h1.super {
+    font-size: 300pt;
+    font-weight: bold;
+    color: rgba(151, 0, 0, 0.1);
+    animation: wobble 5s infinite;
+    animation-direction: alternate-reverse;
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: block;
+    top: 100px;
+    z-index: -1;
+}
+
+@keyframes wobble {
+    0% {
+        filter: blur(5px);
+        text-shadow: 4px 2px 4px #65ff6525, -2px -4px 0px #ff65ea25;
+    }
+    25% {
+        text-shadow: 6px -3px 1px #65ff6525, 1px 5px 4px #ff65ea25;
+    }
+    50% {
+        filter: blur(2px);
+        text-shadow: 4px 4px 4px #65ff6525, -3px 3px 4px #ff65ea25;
+    }
+    60% {
+        filter: blur(0px);
+    }
+    75% {
+        text-shadow: -2px 1px 0px #65ff6525, 2px 2px 1px #ff65ea25;
+    }
+    85% {
+        text-shadow: 4px 2px 4px #65ff6525, -2px 4px 4px #ff65ea25;
+        filter: blur(5px);
+    }
+    100% {
+        text-shadow: 4px 2px 4px #65ff6525, -2px -4px 0px #ff65ea25;
+        filter: blur(5px);
+    }
+}
+
+div.title h2 {
+    font-size: 20pt;
+    margin: 0;
+    color: rgb(253, 255, 158);
+    font-style: italic;
+}
+
+div.title a {
+    display: block;
+    padding: 5px;
+    font-size: 25pt;
+    padding: 10px;
+    padding-inline: 20px;
+    margin-top: 80px;
+    background-color: black;
+    border: 1px solid yellow;
+    color: yellow;
+    font-weight: bold;
+    background-color: #3b3834;
+    text-decoration: none;
 }
