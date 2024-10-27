@@ -813,7 +813,7 @@ var dialogues = {
             {
                 "conditions": [],
                 "text": "You're not as funny as you think you are.",
-                "go_to_dialogue": "js-defensive4"
+                "go_to_dialogue": "js-accusation"
             }
         ]
     },
@@ -839,7 +839,21 @@ var dialogues = {
             {
                 "conditions": [],
                 "text": "Oh, but I might!",
-                "go_to_dialogue": "greeting"
+                "go_to_dialogue": "fight"
+            }
+        ]
+    },
+    "fight": {
+        "speaker": "javascript",
+        "text": "*oof*, *boof*, *bang*, *crash*. *A key clatters to the ground*",
+        "img": "scene_images/bash.jpg",
+        "go_to_scene": "",
+        "pickup": ["+key"],
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Onwards!",
+                "go_to_dialogue": "to_car"
             }
         ]
     },
