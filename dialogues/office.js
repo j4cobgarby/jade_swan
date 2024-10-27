@@ -408,6 +408,7 @@ var dialogues = {
     },
     "uni_main": {
         "conditions": [""],
+        "img": "scene_images/University_main.jpg",
         "speaker": "thought",
         "text": "The pinnacle of human reason.",
         "go_to_scene": "",
@@ -435,6 +436,25 @@ var dialogues = {
         ]
     },
 
+    "geo_office": {
+        "conditions": [""],
+        "speaker": "thought",
+        "img": "scene_images/geo/geo_busy.jpg",
+        "text": "This science must be beyond me.",
+        "go_to_scene": "",
+        "responses": [
+        {
+            "conditions": [],
+            "text": "Hey! You there!",
+            "go_to_dialogue": "cafe"
+        },
+        {
+            "conditions": [],
+            "text": "University Main",
+            "go_to_dialogue": "uni_main"
+        }
+        ]
+    },
     "car": {
         "speaker": "thought",
         "text": "I hope I remembered to put in the right fuel this time. . .",
@@ -487,11 +507,87 @@ var dialogues = {
         ]
     },
 
-    "art": {
+    "art_dept": {
+        "conditions": [""],
+        "speaker": "thought",
+        "img": "scene_images/art/0.jpg",
+        "text": "The majesty of those paintings I can see over my shoulder is beyond words.",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "University Main",
+                "go_to_dialogue": "uni_main"
+            },
+            {
+                "conditions": [],
+                "text": "Excuse me?",
+                "go_to_dialogue": "art_0"
+            }
+        ]
+    },
+
+    "art_0": {
+        "conditions": [""],
+        "speaker": "artist",
+        "img": "scene_images/art/0.jpg",
+        "text": "Hello! Welcome to the Art Department. I’m the Professor of face-painting!",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Sorry to bother you!",
+                "go_to_dialogue": "art_dept"
+            },
+            {
+                "conditions": ["found_ladder"],
+                "text": "I found this ladder...",
+                "go_to_dialogue": "art_1"
+            }
+        ]
+    },
+
+    "art_1": {
+        "conditions": [""],
+        "speaker": "artist",
+        "img": "scene_images/art/1.jpg",
+        "text": " A sketchy ladder? Oh, yes, one of those went missing recently.",
+        "go_to_dialogue": "art_2",
+        "responses": []
+    },
+
+    "art_2": {
+        "conditions": [""],
+        "speaker": "artist",
+        "img": "scene_images/art/2.jpg",
+        "text": "Someone broke in last night and took one. They stole exactly enough art equipment to use some kind of animal statuette to take over the world.",
+        "go_to_dialogue": "art_3",
+        "responses": []
+    },
+    "art_3": {
+        "conditions": [""],
+        "speaker": "artist",
+        "img": "scene_images/art/3.jpg",
+        "text": "Also! They left a muddy footprint on the floor.",
+        "pickup": ["+found_footprint"],
+        "go_to_dialogue": "art_4",
+        "responses": []
+    },
+    "art_4": {
+        "conditions": [""],
+        "speaker": "artist",
+        "img": "scene_images/art/4.jpg",
+        "text": "Some people have no manners.",
+        "go_to_dialogue": "art_dept",
+        "responses": [
+        ]
+    },
+
+    "cafe": {
         "conditions": [""],
         "speaker": "thought",
         "text": "The smell... it's okay I guess.",
-        "go_to_scene": "",
+        "go_to_dialogue": "",
         "responses": [
             {
                 "conditions": [],
@@ -501,19 +597,8 @@ var dialogues = {
         ]
     },
 
-    "cafe": {
-        "conditions": [""],
-        "speaker": "thought",
-        "text": "The smell... it's okay I guess.",
-        "go_to_scene": "",
-        "responses": [
-            {
-                "conditions": [],
-                "text": "University Main",
-                "go_to_dialogue": "uni_main"
-            }
-        ]
-    },
+
+
 
     "geo_init": {
         "conditions": [""],
@@ -546,8 +631,8 @@ var dialogues = {
         "conditions": [""],
         "speaker": "geologist",
         "img": "scene_images/geo/hello1.jpg",
-        "text": "Ah, hello! I'm a Professor of Mud and Dirt studies. I specialise in debugging.",
-        "go_to_scene": "geo_intro_0",
+        "text": "Ah, hello! I’m a Professor of Mud and Dirt studies. I specialise in debugging.",
+        "go_to_dialogue": "geo_intro_0",
         "responses": [
         ]
     },
@@ -556,8 +641,8 @@ var dialogues = {
         "conditions": [""],
         "speaker": "geologist",
         "img": "scene_images/geo/hello2.jpg",
-        "text": "That's removing the bugs from the soil so we can analyse them.",
-        "go_to_scene": "geo_intro_1",
+        "text": "That’s removing the bugs from the soil so we can analyse them.",
+        "go_to_dialogue": "geo_intro_1",
         "responses": [
         ]
     },
@@ -567,7 +652,7 @@ var dialogues = {
         "speaker": "geologist",
         "img": "scene_images/geo/hello3.jpg",
         "text": "I sure do love soil. The only thing I love more are semi-precious stones and animals carved from them.",
-        "go_to_scene": "geo_intro_2",
+        "go_to_dialogue": "geo_intro_2",
         "responses": [
         ]
     },
@@ -577,7 +662,7 @@ var dialogues = {
         "speaker": "geologist",
         "img": "scene_images/geo/hello4.jpg",
         "text": "I have every animal except a swan.",
-        "go_to_scene": "geo_intro_3",
+        "go_to_dialogue": "geo_intro_3",
         "responses": [
         ]
     },
@@ -586,8 +671,8 @@ var dialogues = {
         "conditions": [""],
         "speaker": "geologist",
         "img": "scene_images/geo/hello5.jpg",
-        "text": "Hm? Me? Steal the jade swan? Really Detective, I'd never do that. Swans are frankly the dodo of the bird world.",
-        "go_to_scene": "geo_intro_4",
+        "text": "Hm? Me? Steal the jade swan? Really Detective, I’d never do that. Swans are frankly the dodo of the bird world.",
+        "go_to_dialogue": "geo_intro_4",
         "responses": [
         ]
     },
@@ -596,8 +681,8 @@ var dialogues = {
         "conditions": [""],
         "speaker": "geologist",
         "img": "scene_images/geo/hello6.jpg",
-        "text": "I'd even prefer a rubber duck!",
-        "go_to_scene": "geo_office",
+        "text": "I’d even prefer a rubber duck!",
+        "go_to_dialogue": "geo_office",
         "responses": [
         ]
     },
@@ -606,8 +691,8 @@ var dialogues = {
         "conditions": [""],
         "speaker": "geologist",
         "img": "scene_images/geo/footprint1.jpg",
-        "text": "Ooh! That smell… you have a particularly interesting sample of dirt for me, don't you!",
-        "go_to_scene": "geo_footprint_1",
+        "text": "Ooh! That smell… you have a particularly interesting sample of dirt for me, don’t you!",
+        "go_to_dialogue": "geo_footprint_1",
         "responses": [
         ],
         
@@ -617,7 +702,7 @@ var dialogues = {
         "speaker": "geologist",
         "img": "scene_images/geo/footprint2.jpg",
         "text": "My word, the dirt in that footprint is clearly from the caves of India! Make for India post-haste!",
-        "go_to_scene": "geo_footprint_2",
+        "go_to_dialogue": "geo_footprint_2",
         "responses": [
         ],
         
@@ -626,7 +711,7 @@ var dialogues = {
         "speaker": "geologist",
         "img": "scene_images/geo/footprint3.jpg",
         "text": "Hm? Well, I suppose it could also be from the eighteenth tunnel from the west of the local castle also, that would also exactly fit the profile of this particular dirt.",
-        "go_to_scene": "geo_footprint_3",
+        "go_to_dialogue": "geo_footprint_3",
         "responses": [
         ],
         
@@ -634,8 +719,8 @@ var dialogues = {
         "conditions": [""],
         "speaker": "geologist",
         "img": "scene_images/geo/footprint4.jpg",
-        "text": "Here, I'll mark it on your map. And when you find a world map I'll mark India on it, too.",
-        "go_to_scene": "geo_office",
+        "text": "Here, I’ll mark it on your map. And when you find a world map I’ll mark India on it, too.",
+        "go_to_dialogue": "geo_office",
         "responses": [
         ],
         
@@ -645,8 +730,8 @@ var dialogues = {
         "conditions": [""],
         "speaker": "geologist",
         "img": "scene_images/geo/farewell.jpg",
-        "text": "Sorry, you won't find any dirt on me. It'll have all been catalogued and filed away.",
-        "go_to_scene": "geo_office",
+        "text": "Sorry, you won’t find any dirt on me. It’ll have all been catalogued and filed away.",
+        "go_to_dialogue": "geo_office",
         "responses": [
         ],
     },
@@ -667,6 +752,7 @@ var dialogues = {
         "speaker": "thought",
         "text": "Hmm, curious. That ladder looks awfully... *sketchy*. I wonder if any of the departments knows something about that.",
         "go_to_scene": "outside_office",
+        "pickup": ["+found_ladder"]
     },
     "office_to_car": {
         "speaker": "thought",
