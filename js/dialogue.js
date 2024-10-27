@@ -1,6 +1,9 @@
 var conditionIconMap = {
     "beans": "/items/beans.png",
-    "jade_swan": "/items/swan.png"
+    "jade_swan": "/items/swan.png",
+    "beanbag": "/items/beanbag.png",
+    "shoeprint": "/items/shoeprint.png",
+    "shoes": "/items/shoes.png"
 }
 
 var characterMap = {
