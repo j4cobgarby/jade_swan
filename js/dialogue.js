@@ -37,15 +37,48 @@ function start_dialogue(first_dialogue) {
     render_dialogue(first_dialogue)    
 }
 
+function matches_conditions(conds) {
+    // conds is an array of strings
+    for (let i = 0; i < conds.length; i++) {
+        const cond = conds[i];
+        if (!conditions.includes(cond)) {
+            return false;
+        }
+    }
+    return true;
+}
+
 function render_dialogue(dialogueName) {
     console.log("rendering dialogue", dialogueName)
 
     // First find dialogue in (potential) list which matches conditions
 
+    var chosen_dialogue = undefined;
+    const dialogue_possibilities = dialogueName.split(",");
+    for (let i = 0; i < dialogue_possibilities.length; i++) {
+        const d_name = dialogue_possibilities[i];
+        const d = dialogues[d_name];
+        if (!d) {
+            console.log("not found dialogue")
+        }
+        console.log(d);
+
+        if ("conditions" in d) {
+            if (d["conditions"] === "" || matches_conditions(d["conditions"].split())) {
+                chosen_dialogue = d_name;
+                break;
+            }
+        } else {
+            chosen_dialogue = d_name;
+            break;
+        }
+    }
+
+    console.log("chosen dialogue is " + chosen_dialogue)
 
     // Then render it
 
-    var dialogue = dialogues[dialogueName]
+    var dialogue = dialogues[chosen_dialogue]
     if (!dialogue) {
         console.log("not found")
         return
