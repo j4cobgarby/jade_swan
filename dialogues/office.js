@@ -286,4 +286,28 @@ var dialogues = {
             }
         ]
     },
+
+    "outside_office": {
+        "speaker": "thought",
+        "text": "Looks like that's the wizard's office up there. What's that trailing down from it? Some kind of lad -- uh...?",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "Go back to the car",
+                "go_to_dialogue": "office_to_car"
+            }
+        ]
+    },
+    "found-ladder": {
+        "speaker": "thought",
+        "text": "Hmm, curious. That ladder looks awfully... *sketchy*. I wonder if any of the departments knows something about that.",
+        "go_to_scene": "outside_office",
+    },
+    "office_to_car": {
+        "speaker": "thought",
+        "text": "Okay, let's get in the car and get going!",
+        "go_to_scene": "car",
+        "responses": []
+    },
 }
