@@ -180,6 +180,7 @@ var dialogues = {
         "conditions": ["black_market_rejected"],
         "speaker": "java",
         "text": "He wouldn't talk to you? I could give you the secret code. But I need you to do something for me first.",
+        "img": "/scene_images/sus_deal.jpg",
         "go_to_scene": "",
         "responses": [
             {
@@ -252,19 +253,22 @@ var dialogues = {
         "conditions": ["beans"],
         "speaker": "thought",
         "text": "So, the black market, huh? Suppose I'd ought to check it out, hopefully I can get in...",
-        "go_to_scene": "car",
+        "go_to_scene": "cafe",
         "responses": []
     },
 
     "java_already_met": {
         "conditions": ["met_java"],
         "speaker": "java",
-        "text": "Hi Detective. Sorry, give the coffee time to kick in. I'm tired from having to tell people that Javascript isn't related to me.",
-        "go_to_scene": "",
-        "responses": [
-        ]
+        "text": "I know you have a policy of only one mystery at a time, but after could you find out who killed all my applets?",
+        "go_to_scene": "cafe",
+        "responses": []
     },
     "java_first_time": {
-        "conditions": []
+        "conditions": [],
+        "speaker": "java",
+        "text": "Hi Detective. Sorry, give the coffee time to kick in. I’m tired from having to tell people that Javascript isn’t related to me.",
+        "go_to_scene": "cafe",
+        "responses": []
     }
 }
