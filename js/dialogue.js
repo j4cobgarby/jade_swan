@@ -9,7 +9,7 @@ var conditionIconMap = {
 var characterMap = {
     "wizard": {
         "name": "Haskell Wizard",
-        "icon": "/svg/icon_wizard.svg"
+        "icon": "/icons/hat.png"
     }
 }
 

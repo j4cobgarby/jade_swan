@@ -18,6 +18,10 @@ body {
     color: yellow;
 }
 
+* {
+    font-family: 'Garamond', serif;
+}
+
 body.animated-background {
     background-image: url("/bg.png");
     background-size: 400px;
@@ -141,10 +145,11 @@ div.dialogue {
 
     max-width: 600px;
     text-align: left;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 20px;
+    padding: 15px;
     vertical-align: middle;
+
+    display: grid;
+    grid-template-columns: 150px auto;
 }
 
 div.dialogue.hidden * {
@@ -153,6 +158,15 @@ div.dialogue.hidden * {
 
 div.dialogue.hidden {
     border-color: rgb(106, 106, 0);
+}
+
+div.dialogue h2.speaker {
+    font-style: italic;
+    font-size: 20pt;
+}
+
+div.dialogue p.speech {
+    font-size: 16pt;
 }
 
 div.dialogue i {
@@ -170,6 +184,7 @@ div.dialogue button {
     color: lightblue;
     border: 2px solid green;
     padding: 5px;
+    font-size: 15pt;
 }
 
 div.dialogue button:hover {
@@ -188,6 +203,10 @@ div.text {
 
 img.icon {
     float: left;
+    width: 128px;
+    padding: 20px;
+    padding-left: 0;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.286));
 }
 
 div.image-wrapper {
