@@ -6,12 +6,13 @@ import json
 import os
 from pathlib import Path
 
-def save_json(out_basename, img_name, shapes):
+def save_json(out_basename, img_name, shapes, auto_dialogue):
     os.makedirs("jsons", exist_ok=True)
 
     with open("jsons/" + out_basename + ".json", "w") as jf:
         jf.write(json.dumps({
             "img": img_name,
+            "auto_dialogue": auto_dialogue,
             "shapes": shapes
         }))
 
@@ -37,6 +38,7 @@ def json_to_html(basename):
             html += f"<path d='{coords}' stroke='#ffff00bb' fill='#ffff0022' stroke-width='6' fill='transparent'></path>"
         html += "</svg>"
         html += "</div>"
+        html += f"<script>start_dialogue('{dic['auto_dialogue']}');</script>"
 
         f.write(template_text.replace("REPLACEME", html))
 
@@ -48,6 +50,8 @@ def gen_maps(img_name):
     screen = pygame.display.set_mode((img_rect.width, img_rect.height))
     clock = pygame.time.Clock()
     run = True
+
+    auto_dialogue = input("What dialogue to play automatically? (blank for none): ")
 
     # Each element schema: 
     # {
@@ -66,7 +70,7 @@ def gen_maps(img_name):
             if ev.type == pygame.QUIT:
                 run = False
                 basename = Path(img_name).stem
-                save_json(basename, img_name, shapes)
+                save_json(basename, img_name, shapes, auto_dialogue)
                 json_to_html(basename)
             elif ev.type == pygame.MOUSEBUTTONDOWN:
                 print(f"Clicked @ {ev.dict['pos']}")
