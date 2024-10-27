@@ -904,4 +904,10 @@ var dialogues = {
         "go_to_scene": "",
         "responses": []
     },
+    "just_a_chair": {
+        "speaker": "thought",
+        "text": "Just a chair. Maybe someone once sat on this...",
+        "go_to_scene": "",
+        "responses": []
+    }
 }
