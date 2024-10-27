@@ -5,11 +5,28 @@ body {
 }
 
 img {
-    max-width: 1000px;
-    border: 1px solid green;
+    width: 100%;
 }
 
 div.content {
     margin: auto;
-    text-align: center;
+}
+
+div.image-wrapper {
+    max-width: 1000px;
+    border: 1px solid green;
+    margin: auto;
+    left: 0;
+    right: 0;
+    position: relative;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
 }
