@@ -24,7 +24,7 @@ body {
 
 body.animated-background {
     background-image: url("/bg.png");
-    background-size: 400px;
+    background-size: 800px;
     background-repeat: repeat;
     animation: shiftBackground 45s linear infinite;
 }
