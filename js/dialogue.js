@@ -19,11 +19,11 @@ var characterMap = {
     },
     "java": {
         "name": "Java",
-        "icon": "/icons/hat.png"
+        "icon": "/items/beanbag.png"
     },
     "ear": {
         "name": "You hear...",
-        "icon": "/icons/hat.png"
+        "icon": "/icons/thought.png"
     },
     "python": {
         "name": "The Python",
