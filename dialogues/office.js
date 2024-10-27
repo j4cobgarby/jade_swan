@@ -266,5 +266,24 @@ var dialogues = {
     },
     "java_first_time": {
         "conditions": []
-    }
+    },
+
+    "car": {
+        "speaker": "thought",
+        "text": "I hope I remembered to put in the right fuel this time. . .",
+        "go_to_scene": "",
+        "responses": []
+    },
+    "registration": {
+        "speaker": "thought",
+        "text": "I tried to get a ‘Detective’ number plate but this is the closest they had.",
+        "go_to_scene": "",
+        "responses": [
+            {
+                "conditions": [],
+                "text": "No time to waste.",
+                "go_to_dialogue": "car"
+            }
+        ]
+    },
 }
