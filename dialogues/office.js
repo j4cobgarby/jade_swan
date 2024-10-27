@@ -481,13 +481,10 @@ var dialogues = {
         ]
     },
 
-
-
-
     "geo_init": {
         "conditions": [""],
         "speaker": "geologist",
-        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\geo_ask.jpg",
+        "img": "scene_images/geo/geo_ask.jpg",
         "text": "Can I help you?",
         "go_to_scene": "",
         "responses": [
@@ -514,7 +511,7 @@ var dialogues = {
     "geo_intro_0": {
         "conditions": [""],
         "speaker": "geologist",
-        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\hello1.jpg",
+        "img": "scene_images/geo/hello1.jpg",
         "text": "Ah, hello! I'm a Professor of Mud and Dirt studies. I specialise in debugging.",
         "go_to_scene": "geo_intro_0",
         "responses": [
@@ -524,7 +521,7 @@ var dialogues = {
     "geo_intro_1": {
         "conditions": [""],
         "speaker": "geologist",
-        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\hello2.jpg",
+        "img": "scene_images/geo/hello2.jpg",
         "text": "That's removing the bugs from the soil so we can analyse them.",
         "go_to_scene": "geo_intro_1",
         "responses": [
@@ -534,7 +531,7 @@ var dialogues = {
     "geo_intro_2": {
         "conditions": [""],
         "speaker": "geologist",
-        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\hello3.jpg",
+        "img": "scene_images/geo/hello3.jpg",
         "text": "I sure do love soil. The only thing I love more are semi-precious stones and animals carved from them.",
         "go_to_scene": "geo_intro_2",
         "responses": [
@@ -544,7 +541,7 @@ var dialogues = {
     "geo_intro_3": {
         "conditions": [""],
         "speaker": "geologist",
-        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\hello4.jpg",
+        "img": "scene_images/geo/hello4.jpg",
         "text": "I have every animal except a swan.",
         "go_to_scene": "geo_intro_3",
         "responses": [
@@ -554,7 +551,7 @@ var dialogues = {
     "geo_intro_4": {
         "conditions": [""],
         "speaker": "geologist",
-        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\hello5.jpg",
+        "img": "scene_images/geo/hello5.jpg",
         "text": "Hm? Me? Steal the jade swan? Really Detective, I'd never do that. Swans are frankly the dodo of the bird world.",
         "go_to_scene": "geo_intro_4",
         "responses": [
@@ -564,7 +561,7 @@ var dialogues = {
     "geo_intro_5": {
         "conditions": [""],
         "speaker": "geologist",
-        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\hello6.jpg",
+        "img": "scene_images/geo/hello6.jpg",
         "text": "I'd even prefer a rubber duck!",
         "go_to_scene": "geo_office",
         "responses": [
@@ -574,7 +571,7 @@ var dialogues = {
     "geo_footprint_0": {
         "conditions": [""],
         "speaker": "geologist",
-        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\footprint1.jpg",
+        "img": "scene_images/geo/footprint1.jpg",
         "text": "Ooh! That smell… you have a particularly interesting sample of dirt for me, don't you!",
         "go_to_scene": "geo_footprint_1",
         "responses": [
@@ -584,7 +581,7 @@ var dialogues = {
     "geo_footprint_1": {
         "conditions": [""],
         "speaker": "geologist",
-        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\footprint2.jpg",
+        "img": "scene_images/geo/footprint2.jpg",
         "text": "My word, the dirt in that footprint is clearly from the caves of India! Make for India post-haste!",
         "go_to_scene": "geo_footprint_2",
         "responses": [
@@ -593,7 +590,7 @@ var dialogues = {
     },"geo_footprint_2": {
         "conditions": [""],
         "speaker": "geologist",
-        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\footprint3.jpg",
+        "img": "scene_images/geo/footprint3.jpg",
         "text": "Hm? Well, I suppose it could also be from the eighteenth tunnel from the west of the local castle also, that would also exactly fit the profile of this particular dirt.",
         "go_to_scene": "geo_footprint_3",
         "responses": [
@@ -602,7 +599,7 @@ var dialogues = {
     },"geo_footprint_3": {
         "conditions": [""],
         "speaker": "geologist",
-        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\footprint4.jpg",
+        "img": "scene_images/geo/footprint4.jpg",
         "text": "Here, I'll mark it on your map. And when you find a world map I'll mark India on it, too.",
         "go_to_scene": "geo_office",
         "responses": [
@@ -613,7 +610,7 @@ var dialogues = {
     "geo_farewell": {
         "conditions": [""],
         "speaker": "geologist",
-        "img": "C:\Users\psyzg5\jade_swan\scene_images\geo\farewell.jpg",
+        "img": "scene_images/geo/farewell.jpg",
         "text": "Sorry, you won't find any dirt on me. It'll have all been catalogued and filed away.",
         "go_to_scene": "geo_office",
         "responses": [
