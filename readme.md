@@ -1,5 +1,9 @@
 # Jade Swan Game
 
+## Play Now
+
+The game is live at https://swan.jgarby.uk
+
 ## Setting up/running
 
 ```
